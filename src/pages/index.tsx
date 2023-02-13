@@ -134,10 +134,10 @@ export default function Home() {
           <span className="text-sm text-gray-500">Chair</span>
           <div>
             <div className="mt-2 flex  items-center justify-between ">
-              <div className="flex space-x-4 ">
-                <button className="h-5 w-5 rounded-full bg-emerald-500"></button>
-                <button className="h-5 w-5 rounded-full bg-green-400"></button>
-                <button className="h-5 w-5 rounded-full bg-indigo-900"></button>
+              <div className="ml-1 flex space-x-4 ">
+                <button className="h-4 w-4 rounded-full bg-emerald-500 ring-emerald-400 ring-offset-4 transition-all focus:ring-2"></button>
+                <button className="h-4 w-4 rounded-full bg-green-400 ring-green-300 ring-offset-4 transition-all focus:ring-2"></button>
+                <button className="h-4 w-4 rounded-full bg-indigo-900 ring-indigo-800 ring-offset-4 transition-all focus:ring-2"></button>
               </div>
               <div className="flex items-center space-x-6">
                 <button className="aspect-square w-8 rounded-md bg-blue-200">
