@@ -4,10 +4,10 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="mx-auto flex flex-col items-center gap-10 bg-slate-300 px-4 py-10">
+    <div className="mx-auto grid min-h-screen flex-col place-content-center items-center gap-10 bg-slate-300 p-10 lg:grid-cols-2 xl:grid-cols-3">
       {/* #1 Select Item */}
       <div
-        className="md flex w-2/3 flex-col rounded-3xl bg-white p-6 shadow-xl
+        className="md flex flex-col rounded-3xl bg-white p-6 shadow-xl
         transition-colors
        sm:bg-slate-200 md:bg-pink-500 lg:bg-yellow-400 xl:bg-slate-500 2xl:bg-slate-600">
         <div className="mb-4 text-2xl font-bold">Select Item</div>
@@ -25,7 +25,7 @@ export default function Home() {
           <span className="font-bold">$99</span>
         </div>
         <button
-          className="mx-auto mt-6 w-2/3 rounded-xl bg-blue-500 p-3 text-center text-white
+          className="mx-auto mt-6 rounded-xl bg-blue-500 p-3 text-center text-white
         hover:bg-teal-500 hover:text-black
         focus:bg-red-500 focus:text-black
          active:bg-yellow-500">
@@ -33,7 +33,7 @@ export default function Home() {
         </button>
       </div>
       {/* #2 Profile */}
-      <div className="group w-2/3 rounded-3xl bg-blue-500 shadow-xl">
+      <div className="group rounded-3xl bg-blue-500 shadow-xl landscape:bg-yellow-500">
         <div className="flex justify-between p-6">
           <span className="text-2xl font-bold text-white">Profile</span>
           <span className="flex">
@@ -86,7 +86,7 @@ export default function Home() {
         </div>
       </div>
       {/* #3 Chair - Add to cart */}
-      <div className="w-2/3 rounded-3xl bg-white p-6 shadow-xl">
+      <div className="rounded-3xl bg-white p-6 shadow-xl lg:col-span-2 xl:col-auto">
         <div className="flex items-center justify-between">
           <span>
             <svg
