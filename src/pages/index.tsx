@@ -4,31 +4,35 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="mx-auto grid min-h-screen flex-col place-content-center items-center gap-10 bg-slate-300 p-10 lg:grid-cols-2 xl:grid-cols-3">
+    <div className="dark mx-auto grid min-h-screen flex-col place-content-center items-center gap-10 bg-slate-300 p-10 lg:grid-cols-2 xl:grid-cols-3">
       {/* #1 Select Item */}
       <div
         className="md flex flex-col rounded-3xl bg-white p-6 shadow-xl
         transition-colors
-       sm:bg-slate-200 md:bg-pink-500 lg:bg-yellow-400 xl:bg-slate-500 2xl:bg-slate-600">
-        <div className="mb-4 text-2xl font-bold">Select Item</div>
+        dark:bg-black
+       ">
+        <div className="mb-4 text-2xl font-bold dark:text-white">
+          Select Item
+        </div>
         <div className="mb-2 flex justify-between">
-          <span className="text-gray-500">Gray Chair</span>
-          <span className="font-bold">$19</span>
+          <span className="text-gray-500 dark:text-gray-400">Gray Chair</span>
+          <span className="font-bold dark:text-gray-50">$19</span>
         </div>
         <div className=" flex justify-between">
-          <span className="text-gray-500">Tooly Table</span>
-          <span className="font-bold">$80</span>
+          <span className="text-gray-500 dark:text-gray-400">Tooly Table</span>
+          <span className="font-bold dark:text-gray-50">$80</span>
         </div>
         <div className="my-4 border border-dashed"></div>
         <div className="flex justify-between">
-          <span className="font-bold">Total</span>
-          <span className="font-bold">$99</span>
+          <span className="font-bold dark:text-gray-50">Total</span>
+          <span className="font-bold dark:text-gray-50">$99</span>
         </div>
         <button
           className="mx-auto mt-6 rounded-xl bg-blue-500 p-3 text-center text-white
-        hover:bg-teal-500 hover:text-black
+          hover:bg-teal-500           hover:text-black
         focus:bg-red-500 focus:text-black
-         active:bg-yellow-500">
+        active:bg-yellow-500 dark:border
+          dark:bg-black dark:hover:bg-white">
           Checkout
         </button>
       </div>
