@@ -124,8 +124,7 @@ export default function Home() {
             </button>
           </span>
         </div>
-        <div className="h-80 bg-slate-300"></div>
-
+        <div className="my-4 h-80 bg-slate-300"></div>
         <div className="my-4 flex flex-col">
           <span className="text-xl  font-medium">Swoon Lounge</span>
           <span className="text-sm text-gray-500">Chair</span>
@@ -138,11 +137,35 @@ export default function Home() {
               </div>
               <div className="flex items-center space-x-4">
                 <button className="aspect-square w-8 rounded-md bg-blue-200">
-                  -
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="m-auto h-4 w-4">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 12h-15"
+                    />
+                  </svg>
                 </button>
                 <span className="text-xl font-bold">1</span>
                 <button className="aspect-square w-8 rounded-md bg-blue-200">
-                  +
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="m-auto h-4 w-4">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
