@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="mx-auto flex flex-col items-center gap-10 bg-slate-300 px-4 py-10 ">
+    <div className="mx-auto flex flex-col items-center gap-10 bg-slate-300 px-4 py-10">
       {/* #1 Select Item */}
-      <div className="w-96 rounded-3xl  bg-white p-6 shadow-xl ">
+      <div className="flex w-96 flex-col rounded-3xl bg-white p-6 shadow-xl ">
         <div className="mb-4 text-2xl font-bold">Select Item</div>
         <div className="mb-2 flex justify-between">
           <span className="text-gray-500">Gray Chair</span>
@@ -21,7 +21,11 @@ export default function Home() {
           <span className="font-bold">Total</span>
           <span className="font-bold">$99</span>
         </div>
-        <button className="mx-auto mt-6 flex w-2/3 items-center rounded-xl bg-blue-500 p-3 text-center text-white">
+        <button
+          className="mx-auto mt-6 w-2/3 rounded-xl bg-blue-500 p-3 text-center text-white 
+        hover:bg-teal-500 hover:text-black
+        focus:bg-red-500 focus:text-black
+         active:bg-yellow-500">
           Checkout
         </button>
       </div>
@@ -129,13 +133,13 @@ export default function Home() {
           <span className="text-xl  font-medium">Swoon Lounge</span>
           <span className="text-sm text-gray-500">Chair</span>
           <div>
-            <div className="flex  justify-between">
-              <div className="flex ">
-                <input type="radio" />
-                <input type="radio" />
-                <input type="radio" />
+            <div className="mt-2 flex  items-center justify-between ">
+              <div className="flex space-x-4 ">
+                <button className="h-5 w-5 rounded-full bg-emerald-500"></button>
+                <button className="h-5 w-5 rounded-full bg-green-400"></button>
+                <button className="h-5 w-5 rounded-full bg-indigo-900"></button>
               </div>
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-6">
                 <button className="aspect-square w-8 rounded-md bg-blue-200">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +155,7 @@ export default function Home() {
                     />
                   </svg>
                 </button>
-                <span className="text-xl font-bold">1</span>
+                <span className="text-2xl font-bold">1</span>
                 <button className="aspect-square w-8 rounded-md bg-blue-200">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
