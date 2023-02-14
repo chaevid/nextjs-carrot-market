@@ -56,10 +56,10 @@ const ItemDetail: NextPage = () => {
       <div>
         <h2 className="text-2xl font-bold text-gray-900">Similar items</h2>
         <div className="mt-4 grid grid-cols-2 gap-4">
-          {[1, 2, 3, 4, 5, 6].map((_, i) => (
+          {[11, 2, 3, 4, 5, 6].map((_, i) => (
             <div key={i}>
               <div className="mb-2 h-56 w-full bg-slate-300" />
-              <h3 className="text-base text-gray-700">Galaxy S60</h3>
+              <h3 className="text-base text-gray-700">${_}Galaxy S60</h3>
               <span className="text-sm font-medium text-gray-700">$6</span>
             </div>
           ))}
