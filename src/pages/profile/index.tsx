@@ -12,7 +12,9 @@ const Profile: NextPage = () => {
       </div>
       <div className="mt-10 flex justify-around">
         <div className="flex flex-col items-center space-y-2">
-          <div className="flex aspect-square w-14 items-center justify-center rounded-full bg-orange-500 text-white">
+          <div
+            className="flex aspect-square w-14 cursor-pointer items-center justify-center rounded-full bg-orange-500 text-white
+          hover:bg-orange-600">
             <svg
               className="h-6 w-6"
               fill="none"
@@ -29,7 +31,9 @@ const Profile: NextPage = () => {
           <span className="text-sm font-medium text-gray-700">판매내역</span>
         </div>
         <div className="flex flex-col items-center space-y-2">
-          <div className="flex aspect-square w-14 items-center justify-center rounded-full bg-orange-500 text-white">
+          <div
+            className="flex aspect-square w-14 cursor-pointer items-center justify-center rounded-full bg-orange-500 text-white
+          hover:bg-orange-600">
             <svg
               className="h-6 w-6"
               fill="none"
@@ -46,7 +50,9 @@ const Profile: NextPage = () => {
           <span className="text-sm font-medium text-gray-700">구매내역</span>
         </div>
         <div className="flex flex-col items-center space-y-2">
-          <div className="flex aspect-square w-14 items-center justify-center rounded-full bg-orange-500 text-white">
+          <div
+            className="flex aspect-square w-14 cursor-pointer items-center justify-center rounded-full bg-orange-500 text-white
+          hover:bg-orange-600">
             <svg
               className="h-6 w-6"
               fill="none"
