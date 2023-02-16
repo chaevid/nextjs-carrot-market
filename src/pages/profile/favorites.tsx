@@ -1,10 +1,10 @@
 import Layout from 'components/layout';
 import { NextPage } from 'next';
 
-const Sold: NextPage = () => {
+const Favorites: NextPage = () => {
   return (
     <Layout
-      title="Sold"
+      title="Favorites"
       canGoBack>
       <div className="flex flex-col space-y-8 py-8">
         {[1, 1, 1, 1].map((_, i) => (
@@ -58,4 +58,4 @@ const Sold: NextPage = () => {
   );
 };
 
-export default Sold;
+export default Favorites;

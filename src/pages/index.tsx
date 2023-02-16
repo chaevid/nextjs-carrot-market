@@ -1,14 +1,12 @@
-// UI Design from https://dribbble.com/shots/15996385-Ecommerce-elements/attachments/7835152?mode=media
-
 import Layout from 'components/layout';
-import Image from 'next/image';
+import FloatingButton from 'components/floating-button';
 
 export default function Home() {
   return (
     <Layout
       title="Home"
-      hasTabBar={true}>
-      <div className="flex flex-col space-y-4 divide-y">
+      hasBtmNav>
+      <div className="flex flex-col space-y-4 divide-y last:pb-4">
         {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
           <div
             className="flex cursor-pointer justify-between px-4 pt-4"
@@ -55,7 +53,7 @@ export default function Home() {
             </div>
           </div>
         ))}
-        <button className="fixed bottom-24 right-6 rounded-full border-transparent bg-orange-400 p-4 text-white shadow-xl transition-colors hover:bg-orange-500">
+        <FloatingButton href="items/upload">
           <svg
             className="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +68,7 @@ export default function Home() {
               d="M12 6v6m0 0v6m0-6h6m-6 0H6"
             />
           </svg>
-        </button>
+        </FloatingButton>
       </div>
     </Layout>
   );
