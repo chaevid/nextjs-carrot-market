@@ -1,6 +1,8 @@
 import Layout from 'components/layout';
 import FloatingButton from 'components/floating-button';
 import { NextPage } from 'next';
+import StreamThumbnail from 'components/stream-thumbnail';
+import Link from 'next/link';
 
 const Streams: NextPage = () => {
   return (
@@ -9,17 +11,16 @@ const Streams: NextPage = () => {
       hasBtmNav>
       <div className="mx-auto flex-col items-center justify-center space-y-4 divide-y last:pb-4">
         {[1, 2, 3, 4, 5, 6, 7].map((_, i) => (
-          <div
-            key={i}
-            className="px-4 pt-4">
-            <div className="aspect-video rounded-md bg-slate-300 shadow-sm"></div>
-            <h3 className="texl-lg mt-2 items-start text-start text-gray-700">
-              Let&apos;s Try Potatoes!
-            </h3>
+          <div key={i}>
+            <Link href={`/streams/${i}`}>
+              <StreamThumbnail
+                id={i}
+                title={`Let's Try Potatoes!!!!!`}
+              />
+            </Link>
           </div>
         ))}
         <FloatingButton href="streams/create">
-          {' '}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

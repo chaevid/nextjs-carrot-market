@@ -1,4 +1,7 @@
+import Button from 'components/button';
+import Input from 'components/input';
 import Layout from 'components/layout';
+import Textarea from 'components/textarea';
 import type { NextPage } from 'next';
 
 const Write: NextPage = () => {
@@ -6,15 +9,18 @@ const Write: NextPage = () => {
     <Layout
       canGoBack
       title="Post in My Local">
-      <form className="px-4 py-4">
-        <textarea
-          className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 "
-          rows={4}
-          placeholder="Ask a question!"
+      <form className="space-y-2 px-4 py-4">
+        <Input
+          label={'Title'}
+          name={'title'}
         />
-        <button className="mt-2 w-full rounded-md border border-transparent bg-orange-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 ">
-          Submit
-        </button>
+        <Textarea
+          label={'Question'}
+          name={'question'}
+          rows={6}
+          placeholder={'What are you curious about?'}
+        />
+        <Button text={'Submit'} />
       </form>
     </Layout>
   );
