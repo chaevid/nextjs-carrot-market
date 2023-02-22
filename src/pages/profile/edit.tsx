@@ -1,8 +1,8 @@
-import Avatar from 'components/avatar';
-import Button from 'components/button';
-import Input from 'components/input';
-import InputImage from 'components/input-image';
-import Layout from 'components/layout';
+import Avatar from '@/components/avatar';
+import Button from '@/components/button';
+import Input from '@/components/input';
+import InputImage from '@/components/input-image';
+import Layout from '@/components/layout';
 import { NextPage } from 'next';
 
 const EditProfile: NextPage = () => {

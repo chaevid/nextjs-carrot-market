@@ -1,8 +1,8 @@
-import Chat from 'components/chat';
-import InputMessage from 'components/input-message';
-import Layout from 'components/layout';
-import Message from 'components/message';
-import StreamThumbnail from 'components/stream-thumbnail';
+import Chat from '@/components/chat';
+import InputMessage from '@/components/input-message';
+import Layout from '@/components/layout';
+import Message from '@/components/message';
+import StreamThumbnail from '@/components/stream-thumbnail';
 import { NextPage } from 'next';
 const chatBubbles: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 

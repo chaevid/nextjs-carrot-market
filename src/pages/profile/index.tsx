@@ -1,6 +1,6 @@
-import IconButton from 'components/icon-button';
-import Layout from 'components/layout';
-import Review from 'components/review';
+import IconButton from '@/components/icon-button';
+import Layout from '@/components/layout';
+import Review from '@/components/review';
 import type { NextPage } from 'next';
 
 function getRandomInt(max: number) {

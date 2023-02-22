@@ -1,9 +1,9 @@
-import Button from 'components/button';
-import Input from 'components/input';
-import SocialLoginButton from 'components/social-login-button';
-import Tab from 'components/tab';
-import TabBar from 'components/tab-bar';
-import { classNameJoin } from 'lib/utils';
+import Button from '@/components/button';
+import Input from '@/components/input';
+import SocialLoginButton from '@/components/social-login-button';
+import Tab from '@/components/tab';
+import TabBar from '@/components/tab-bar';
+import { classNameJoin } from '@/lib/utils';
 import { useState } from 'react';
 
 export default function Enter() {

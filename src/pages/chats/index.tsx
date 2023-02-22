@@ -1,5 +1,5 @@
-import Chat from 'components/chat';
-import Layout from 'components/layout';
+import Chat from '@/components/chat';
+import Layout from '@/components/layout';
 import { NextPage } from 'next';
 
 const Chats: NextPage = () => {

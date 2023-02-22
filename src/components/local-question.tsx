@@ -1,4 +1,4 @@
-import { getTimeSinceCreation } from 'lib/utils';
+import { getTimeSinceCreation } from '@/lib/utils';
 import Link from 'next/link';
 
 interface LocalQuestionProps {

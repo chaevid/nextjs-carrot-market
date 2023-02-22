@@ -1,9 +1,9 @@
-import Avatar from 'components/avatar';
-import Button from 'components/button';
-import Layout from 'components/layout';
-import LocalQuestionComment from 'components/local-question-comment';
-import LocalQuestionDetail from 'components/local-question-detail';
-import Textarea from 'components/textarea';
+import Avatar from '@/components/avatar';
+import Button from '@/components/button';
+import Layout from '@/components/layout';
+import LocalQuestionComment from '@/components/local-question-comment';
+import LocalQuestionDetail from '@/components/local-question-detail';
+import Textarea from '@/components/textarea';
 import type { NextPage } from 'next';
 
 const CommunityPostDetail: NextPage = () => {

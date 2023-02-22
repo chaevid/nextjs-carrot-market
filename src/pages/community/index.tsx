@@ -1,6 +1,6 @@
-import FloatingButton from 'components/floating-button';
-import Layout from 'components/layout';
-import LocalQuestion from 'components/local-question';
+import FloatingButton from '@/components/floating-button';
+import Layout from '@/components/layout';
+import LocalQuestion from '@/components/local-question';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
