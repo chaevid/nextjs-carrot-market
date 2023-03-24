@@ -7,16 +7,22 @@ interface LoginForm {
   username: string;
   email: string;
   password: string;
+  errors?: string;
 }
 
 export default function Forms() {
   const {
     register,
     handleSubmit,
+    watch,
+    setError,
+    setValue,
+    reset,
     formState: { errors },
   } = useForm<LoginForm>({ mode: 'onBlur' });
   const onValid = (data: LoginForm) => {
     console.log('Valid!');
+    reset();
   };
   const onInvalid = (errors: FieldErrors) => {
     console.log(errors);
@@ -34,6 +40,7 @@ export default function Forms() {
         type="text"
         placeholder="Username"
       />
+      <span>{errors.username?.message}</span>
       <input
         {...register('email', {
           required: 'Email is required',
@@ -45,7 +52,7 @@ export default function Forms() {
         type="email"
         placeholder="Email"
       />
-      {errors.email?.message}
+      <span>{errors.email?.message}</span>
       {handleSubmit}
       <input
         {...register('password', { required: 'Password is required' })}
@@ -56,6 +63,7 @@ export default function Forms() {
         type="submit"
         value="Create Account"
       />
+      <span>{errors.errors?.message}</span>
     </form>
   );
 }
