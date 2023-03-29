@@ -5,11 +5,27 @@ import Tab from '@/components/tab';
 import TabBar from '@/components/tab-bar';
 import { classNameJoin } from '@/lib/utils';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
+interface EnterForm {
+  email?: string;
+  phone?: string;
+}
 export default function Enter() {
+  const { register, handleSubmit, reset } = useForm();
+
   const [method, setMethod] = useState<'email' | 'phone'>('email');
-  const onEmailClick = () => setMethod('email');
-  const onPhoneClick = () => setMethod('phone');
+  const onEmailClick = () => {
+    reset();
+    setMethod('email');
+  };
+  const onPhoneClick = () => {
+    reset();
+    setMethod('phone');
+  };
+  const onValid = (data: EnterForm) => {
+    console.log(data);
+  };
   return (
     <div className="my-16 px-8">
       <h3 className="my-16 text-center text-3xl font-bold">Enter to Carrot</h3>
@@ -26,13 +42,17 @@ export default function Enter() {
             isSelected={method === 'phone' ? true : false}></Tab>
         </TabBar>
       </div>
-      <form className="mt-4 flex flex-col space-y-4">
+      <form
+        onSubmit={handleSubmit(onValid)}
+        className="mt-4 flex flex-col space-y-4">
         {method === 'email' ? (
           <>
             <Input
+              register={register('email')}
+              required
               label={'Email address'}
               name={'email'}
-              placeholder={'chaevid@gmail.com'}
+              type="email"
             />
             <Button text={'Get login link'} />
           </>
@@ -40,10 +60,12 @@ export default function Enter() {
         {method === 'phone' ? (
           <>
             <Input
+              register={register('phone')}
+              required
               label={'Phone'}
               name={'phone'}
+              type="tel"
               category="phone"
-              placeholder={'chaevid@gmail.com'}
             />
             <Button text={'Get one-time password'} />
           </>
