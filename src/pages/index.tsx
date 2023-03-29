@@ -1,7 +1,7 @@
 import Layout from '@/components/layout';
 import FloatingButton from '@/components/floating-button';
 import Item from '@/components/item';
-import '../lib/client';
+import '../lib/server/client';
 
 export default function Home() {
   return (

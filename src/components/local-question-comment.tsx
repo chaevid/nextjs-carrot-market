@@ -1,4 +1,4 @@
-import { getTimeSinceCreation } from '@/lib/utils';
+import { getTimeSinceCreation } from '@/lib/client/utils';
 import Avatar from './avatar';
 
 interface LocalQuestionCommentProps {

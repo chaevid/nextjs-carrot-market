@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { classNameJoin } from '@/lib/utils';
+import { classNameJoin } from '@/lib/client/utils';
 import { useRouter } from 'next/router';
 import BottomNavigation from './bottom-navigation';
 import Header from './header';

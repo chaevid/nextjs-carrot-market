@@ -1,4 +1,4 @@
-import { classNameJoin } from '@/lib/utils';
+import { classNameJoin } from '@/lib/client/utils';
 
 interface StreamThumbnailProps {
   id: number;

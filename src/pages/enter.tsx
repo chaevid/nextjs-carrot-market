@@ -3,7 +3,8 @@ import Input from '@/components/input';
 import SocialLoginButton from '@/components/social-login-button';
 import Tab from '@/components/tab';
 import TabBar from '@/components/tab-bar';
-import { classNameJoin } from '@/lib/utils';
+import useMutation from '@/lib/client/useMutation';
+
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -12,6 +13,7 @@ interface EnterForm {
   phone?: string;
 }
 export default function Enter() {
+  const [enter, { loading, data, error }] = useMutation('/api/users/enter');
   const [submitting, setSubmitting] = useState(false);
   const { register, handleSubmit, reset } = useForm();
   const [method, setMethod] = useState<'email' | 'phone'>('email');
@@ -24,14 +26,7 @@ export default function Enter() {
     setMethod('phone');
   };
   const onValid = (data: EnterForm) => {
-    setSubmitting(true);
-    fetch('/api/users/enter', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' },
-    }).then(() => {
-      setSubmitting(false);
-    });
+    enter(data);
   };
   return (
     <div className="my-16 px-8">
