@@ -25,9 +25,10 @@ export default function Enter() {
     reset();
     setMethod('phone');
   };
-  const onValid = (data: EnterForm) => {
-    enter(data);
+  const onValid = (validForm: EnterForm) => {
+    enter(validForm);
   };
+  console.log(loading, data, error);
   return (
     <div className="my-16 px-8">
       <h3 className="my-16 text-center text-3xl font-bold">Enter to Carrot</h3>
