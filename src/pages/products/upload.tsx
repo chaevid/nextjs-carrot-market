@@ -3,37 +3,54 @@ import Input from '@/components/input';
 import InputImage from '@/components/input-image';
 import Layout from '@/components/layout';
 import Textarea from '@/components/textarea';
+import useMutation from '@/lib/client/useMutation';
 import type { NextPage } from 'next';
+import { useForm } from 'react-hook-form';
 
+interface UploadProductForm {
+  name: string;
+  price: number;
+  description: string;
+}
 const Upload: NextPage = () => {
+  const { register, handleSubmit } = useForm<UploadProductForm>();
+  const [uploadProduct, { loading, data }] = useMutation('/api/products');
+  const onVaild = (data: UploadProductForm) => {
+    if (loading) return;
+    uploadProduct(data);
+  };
   return (
     <Layout
       title="Upload Product"
       canGoBack>
-      <div className="space-y-4 px-4 py-4">
+      <form
+        className="space-y-4 px-4 py-4"
+        onSubmit={handleSubmit(onVaild)}>
         <InputImage
           name={'product'}
           category={'product'}></InputImage>
         <Input
-          label={'Title'}
-          name={'title'}
+          register={register('name', { required: true })}
+          label={'name'}
+          name={'name'}
           type="text"
-          // register={}
           required></Input>
         <Input
+          register={register('price', { required: true })}
           label={'Price'}
           name={'price'}
           type="number"
-          category="price"></Input>
+          category="price"
+          required></Input>
         <Textarea
+          register={register('description', { required: true })}
           label={'Description'}
           name={'description'}
           rows={6}
-          placeholder={
-            'Describe your item in as much detail as you can.'
-          }></Textarea>
-        <Button text={'Upload'}></Button>
-      </div>
+          placeholder={'Describe your item in as much detail as you can.'}
+          required></Textarea>
+        <Button text={loading ? 'Loading...' : 'Upload'}></Button>
+      </form>
     </Layout>
   );
 };

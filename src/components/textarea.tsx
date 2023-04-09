@@ -1,9 +1,12 @@
+import { UseFormRegisterReturn } from 'react-hook-form';
+
 interface TextareaProps {
   hideLabel?: boolean;
   label: string;
   name: string;
   rows: number;
   placeholder?: string;
+  register: UseFormRegisterReturn;
   [key: string]: any;
 }
 export default function Textarea({
@@ -12,6 +15,7 @@ export default function Textarea({
   name,
   rows,
   placeholder,
+  register,
   ...rest
 }: TextareaProps) {
   return (
@@ -25,6 +29,7 @@ export default function Textarea({
       )}
       <textarea
         id={name}
+        {...register}
         name={name}
         rows={rows}
         placeholder={placeholder}

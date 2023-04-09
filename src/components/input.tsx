@@ -43,8 +43,8 @@ export default function Input({
             id={name}
             type={type}
             required={required}
-            step="0.1"
-            placeholder="0.00"
+            step="1"
+            placeholder="0"
             {...register}
             className="w-full appearance-none rounded-md border border-gray-300 py-3 pl-8 pr-14 placeholder-gray-300 shadow-sm 
           focus:border-orange-500 focus:outline-none focus:ring-orange-500"
