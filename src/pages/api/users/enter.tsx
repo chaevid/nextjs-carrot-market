@@ -1,9 +1,11 @@
+import mail from '@sendgrid/mail';
 import twilio from 'twilio';
 import crypto from 'crypto';
 import client from '@/lib/server/client';
 import withHandler, { ResponseType } from '@/lib/server/withHandler';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+mail.setApiKey(process.env.SENDGRID_API_KEY!);
 const twilioClient = twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
 
 async function handler(
@@ -19,10 +21,12 @@ async function handler(
     });
   }
 
-  const payload = crypto
-    .createHash('sha256')
-    .update(user.email || user.phone?.toString())
-    .digest('hex');
+  // const payload = crypto
+  //   .createHash('sha256')
+  //   .update(user.email || user.phone?.toString())
+  //   .digest('hex');
+  const payload = Math.floor(100000 + Math.random() * 900000) + '';
+
   const token = await client.token.create({
     data: {
       payload: payload,
@@ -47,6 +51,15 @@ async function handler(
       body: `Your login token is ${payload}`,
     });
     console.log(message);
+  } else if (email) {
+    const email = await mail.send({
+      from: { email: 'chaevid@gmail.com' },
+      to: 'chaevid@gmail.com', //PRODUCTION : `to: email`
+      subject: 'Your Carrot Market Verification Email',
+      text: `Your login token is ${payload}`,
+      html: `<strong>Your login token is ${payload}</strong>`,
+    });
+    console.log(email);
   }
   return res.json({
     ok: true,
