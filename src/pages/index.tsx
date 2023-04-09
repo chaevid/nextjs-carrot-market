@@ -4,10 +4,19 @@ import Item from '@/components/item';
 import '../lib/server/client';
 import useUser from '@/lib/client/useUser';
 import Head from 'next/head';
+import useSWR from 'swr';
+import { Product } from '@prisma/client';
+import { NextPage } from 'next';
 
-export default function Home() {
+interface ProductsResponse {
+  ok: boolean;
+  products: Product[];
+}
+
+const Home: NextPage = () => {
   const { user, isLoading } = useUser();
-  console.log(user);
+  const { data } = useSWR<ProductsResponse>('/api/products');
+
   return (
     <Layout
       title="Home"
@@ -16,13 +25,13 @@ export default function Home() {
         <title>HOME</title>
       </Head>
       <div className=" flex flex-col space-y-4 divide-y">
-        {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
+        {data?.products?.map((product) => (
           <Item
-            key={i}
-            id={i}
-            title={`${i} iPhone Pro 14 - Space Black`}
+            key={product.id}
+            id={product.id}
+            title={product.name}
             location={`Songpa-gu`}
-            price={99}
+            price={product.price}
             comments={0}
             hearts={0}></Item>
         ))}
@@ -45,4 +54,6 @@ export default function Home() {
       </div>
     </Layout>
   );
-}
+};
+
+export default Home;

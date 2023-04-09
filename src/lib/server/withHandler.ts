@@ -1,17 +1,20 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { type } from 'os';
 
 export interface ResponseType {
   ok: boolean;
   [key: string]: any;
 }
 
+type methodType = 'GET' | 'POST' | 'DELETE';
+
 interface ConfigType {
-  method: 'GET' | 'POST' | 'DELETE';
+  methods: methodType[];
   handler: (req: NextApiRequest, res: NextApiResponse) => void;
   isPrivate?: boolean;
 }
 export default function withHandler({
-  method,
+  methods,
   handler,
   isPrivate = true,
 }: ConfigType) {
@@ -19,7 +22,7 @@ export default function withHandler({
     req: NextApiRequest,
     res: NextApiResponse
   ): Promise<any> {
-    if (req.method !== method) {
+    if (req.method && !methods.includes(req.method as methodType)) {
       return res.status(405).end();
     }
     if (isPrivate && !req.session.user) {
