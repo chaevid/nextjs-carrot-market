@@ -1,6 +1,5 @@
 import mail from '@sendgrid/mail';
 import twilio from 'twilio';
-import crypto from 'crypto';
 import client from '@/lib/server/client';
 import withHandler, { ResponseType } from '@/lib/server/withHandler';
 import { NextApiRequest, NextApiResponse } from 'next';
@@ -45,21 +44,23 @@ async function handler(
   });
 
   if (phone) {
-    const message = await twilioClient.messages.create({
+    /* const message = await twilioClient.messages.create({
       messagingServiceSid: process.env.TWILIO_MSG_SID,
       to: process.env.MY_PHONE!, //PRODUCTION : `to: phone`
       body: `Your login token is ${payload}`,
     });
-    console.log(message);
+    console.log(message); */
+    console.log('phone');
   } else if (email) {
-    const email = await mail.send({
+    /* const email = await mail.send({
       from: { email: 'chaevid@gmail.com' },
       to: 'chaevid@gmail.com', //PRODUCTION : `to: email`
       subject: 'Your Carrot Market Verification Email',
       text: `Your login token is ${payload}`,
       html: `<strong>Your login token is ${payload}</strong>`,
     });
-    console.log(email);
+    console.log(email); */
+    console.log('email');
   }
   return res.json({
     ok: true,
