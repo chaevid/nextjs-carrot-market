@@ -1,4 +1,4 @@
-import client from '@/lib/server/client';
+import { client } from '@/lib/server/client';
 import withHandler, { ResponseType } from '@/lib/server/withHandler';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { withApiSession } from '@/lib/server/withSession';

@@ -1,6 +1,6 @@
 import mail from '@sendgrid/mail';
 import twilio from 'twilio';
-import client from '@/lib/server/client';
+import { client } from '@/lib/server/client';
 import withHandler, { ResponseType } from '@/lib/server/withHandler';
 import { NextApiRequest, NextApiResponse } from 'next';
 
