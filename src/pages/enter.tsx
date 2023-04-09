@@ -4,8 +4,9 @@ import SocialLoginButton from '@/components/social-login-button';
 import Tab from '@/components/tab';
 import TabBar from '@/components/tab-bar';
 import useMutation from '@/lib/client/useMutation';
+import { useRouter } from 'next/router';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 interface EnterForm {
@@ -46,8 +47,12 @@ export default function Enter() {
     if (tokenLoading) return;
     confirmToken(validForm);
   };
-  console.log(loading, data, error);
-  console.log(data);
+  const router = useRouter();
+  useEffect(() => {
+    if (tokenData?.ok) {
+      router.push('/');
+    }
+  }, [tokenData, router]);
   return (
     <div className="my-16 px-8">
       <h3 className="my-16 text-center text-3xl font-bold">Enter to Carrot</h3>
@@ -66,7 +71,6 @@ export default function Enter() {
         </form>
       ) : (
         <>
-          {' '}
           <div className="flex flex-col items-center">
             <h5 className="text-sm text-gray-500">Enter using:</h5>
             <TabBar length={2}>
