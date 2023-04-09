@@ -26,13 +26,13 @@ const Upload: NextPage = () => {
   const { register, handleSubmit } = useForm<UploadProductForm>();
   const [uploadProduct, { loading, data }] =
     useMutation<UploadProductMutation>('/api/products');
-  const onVaild = (data: UploadProductForm) => {
+  const onValid = (data: UploadProductForm) => {
     if (loading) return;
     uploadProduct(data);
   };
   useEffect(() => {
     if (data?.ok) {
-      router.push(`/products/${data.product.id}`);
+      router.replace(`/products/${data.product.id}`);
     }
   }, [data, router]);
   return (
@@ -41,7 +41,7 @@ const Upload: NextPage = () => {
       canGoBack>
       <form
         className="space-y-4 px-4 py-4"
-        onSubmit={handleSubmit(onVaild)}>
+        onSubmit={handleSubmit(onValid)}>
         <InputImage
           name={'product'}
           category={'product'}></InputImage>
