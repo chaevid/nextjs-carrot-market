@@ -13,10 +13,6 @@ async function handler(
   }
   if (req.method === 'POST') {
   }
-  res.json({
-    ok: true,
-    product,
-  });
 }
 
 export default withApiSession(
