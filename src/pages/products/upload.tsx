@@ -17,10 +17,13 @@ const Upload: NextPage = () => {
         <Input
           label={'Title'}
           name={'title'}
+          type="text"
+          // register={}
           required></Input>
         <Input
           label={'Price'}
           name={'price'}
+          type="number"
           category="price"></Input>
         <Textarea
           label={'Description'}
